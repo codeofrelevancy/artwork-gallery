@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 import classNames from "classnames";
@@ -22,7 +23,7 @@ function Navigation() {
           <div className="hidden sm:ml-6 sm:block">
             <div className="flex space-x-4">
               {NAVIGATION.map(({ label, route }) => (
-                <a
+                <Link
                   key={label}
                   href={route}
                   onClick={onLinkage(route)}
@@ -37,7 +38,7 @@ function Navigation() {
                   aria-current={pathname === route ? "page" : undefined}
                 >
                   {label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
